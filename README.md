@@ -4,7 +4,7 @@
 ## 10. Implementation of programs using pointer arithmetic.
 # Ex.No:21
   Implement a C program to demonstrate call by value and call by reference by swapping two integers using separate functions.
-# Date : 
+# Date : 31/05/2026
 # Aim:
  To implement a C program that illustrates the difference between call by value and call by reference by swapping two integer variables using two separate functions.
 # Algorithm:
@@ -39,7 +39,25 @@
 ### Step 12: 
   Stop
 # Program:
+```
+#include <stdio.h>
+void swapv(int x,int y){int t=x;x=y;y=t;printf("Inside swapv: %d %d\n",x,y);}
+void swapr(int *x,int *y){int t=*x;*x=*y;*y=t;printf("Inside swapr: %d %d\n",*x,*y);}
+int main(){
+    int a=10,b=20;
+    printf("Before swapv: %d %d\n",a,b);
+    swapv(a,b);
+    printf("After swapv: %d %d\n",a,b);
+    printf("Before swapr: %d %d\n",a,b);
+    swapr(&a,&b);
+    printf("After swapr: %d %d\n",a,b);
+    return 0;
+}
+
+```
 # Output:
+<img width="558" height="310" alt="image" src="https://github.com/user-attachments/assets/0accd589-aa28-4a33-9f0f-05d11b96c574" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +95,19 @@
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+int fibo(int x){ return (x<=1)?x:fibo(x-1)+fibo(x-2); }
+int main(){
+    int n; scanf("%d",&n);
+    for(int i=0;i<n;i++) printf("%d ",fibo(i));
+    return 0;
+}
+
+```
 # Output:
+<img width="450" height="141" alt="image" src="https://github.com/user-attachments/assets/110bced7-7249-426d-92ad-c854bda5dcc1" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +149,23 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```
+#include <stdio.h>
+void printEO(int cur,int limit){
+    if(cur>limit) return;
+    printf("%d ",cur);
+    printEO(cur+2,limit);
+}
+int main(){
+    int l,u; scanf("%d%d",&l,&u);
+    printEO(l,u);
+    return 0;
+}
+
+```
 # Output:
+<img width="410" height="181" alt="image" src="https://github.com/user-attachments/assets/b889bbd3-d847-45e2-b573-e6745351a717" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +207,22 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+    int n,*p,sum=0; scanf("%d",&n);
+    p=(int*)calloc(n,sizeof(int));
+    for(int i=0;i<n;i++){ scanf("%d",&p[i]); sum+=p[i]; }
+    printf("Sum=%d\n",sum);
+    free(p);
+    return 0;
+}
+
+```
 # Output:
+<img width="421" height="180" alt="image" src="https://github.com/user-attachments/assets/57c124e6-f03e-47db-be37-e89e8a8a2e05" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +258,17 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+void display(int *a,int n){ for(int i=0;i<n;i++) printf("%d ",*(a+i)); }
+int main(){
+    int arr[5]; for(int i=0;i<5;i++) scanf("%d",&arr[i]);
+    display(arr,5);
+    return 0;
+}
+```
 # Output:
+<img width="406" height="143" alt="image" src="https://github.com/user-attachments/assets/5e071d03-6f82-478d-9fc2-5eb4f75044d4" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
